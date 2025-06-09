@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author vanessalagomachado
+ * @author Joao Sertoli
  */
 public class PrincipalJF extends javax.swing.JFrame {
 
@@ -29,6 +29,7 @@ public class PrincipalJF extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         miCarta = new javax.swing.JMenuItem();
+        miJogador = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -43,6 +44,14 @@ public class PrincipalJF extends javax.swing.JFrame {
             }
         });
         jMenu1.add(miCarta);
+
+        miJogador.setText("Jogador");
+        miJogador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miJogadorActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miJogador);
 
         jMenuBar1.add(jMenu1);
 
@@ -73,6 +82,12 @@ public class PrincipalJF extends javax.swing.JFrame {
         telaCartas.setVisible(true);
     }//GEN-LAST:event_miCartaActionPerformed
 
+    private void miJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miJogadorActionPerformed
+        JogadorJF telaJogador = new JogadorJF();
+        telaJogador.setVisible(true);
+                
+    }//GEN-LAST:event_miJogadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -99,6 +114,7 @@ public class PrincipalJF extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PrincipalJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -114,5 +130,6 @@ public class PrincipalJF extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem miCarta;
+    private javax.swing.JMenuItem miJogador;
     // End of variables declaration//GEN-END:variables
 }

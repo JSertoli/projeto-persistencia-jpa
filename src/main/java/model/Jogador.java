@@ -79,8 +79,16 @@ public class Jogador implements Serializable{
         this.baralho = baralho;
     }
 
-    // Método para adicionar uma carta ao baralho
     public void adicionarCarta(Carta carta) {
         baralho.add(carta);
+    }
+    
+    public void removeCarta(Carta c){
+        baralho.remove(c);
+    }
+
+    @Override
+    public String toString() {
+        return nickname;
     }
 }

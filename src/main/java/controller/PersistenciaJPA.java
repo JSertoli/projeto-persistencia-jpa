@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.*;
 import model.Carta;
+import model.Jogador;
 /**
  *
  * @author Joao Sertoli
@@ -84,7 +85,6 @@ public class PersistenciaJPA implements InterfaceBD {
         return entity;
     }
 
-    // 🔄 Método para listar todas as Cartas
     public List<Carta> getCartas() {
         entity = getEntityManager();
         try {
@@ -92,6 +92,17 @@ public class PersistenciaJPA implements InterfaceBD {
             return query.getResultList();
         } catch (Exception e) {
             Logger.getLogger(PersistenciaJPA.class.getName()).log(Level.SEVERE, "Erro ao buscar cartas", e);
+            return null;
+        }
+    }
+    
+        public List<Jogador> getJogadores() {
+        entity = getEntityManager();
+        try {
+            TypedQuery<Jogador> query = entity.createQuery("SELECT c FROM Jogador c", Jogador.class);
+            return query.getResultList();
+        } catch (Exception e) {
+            Logger.getLogger(PersistenciaJPA.class.getName()).log(Level.SEVERE, "Erro ao buscar Jogadores", e);
             return null;
         }
     }

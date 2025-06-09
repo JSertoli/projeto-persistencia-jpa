@@ -9,7 +9,7 @@ import model.Categoria;
 
 /**
  *
- * @author vanessalagomachado
+ * @author Joao Sertoli
  */
 public class CadastroCartaJD extends javax.swing.JDialog {
     private Carta carta;
