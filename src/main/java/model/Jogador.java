@@ -4,28 +4,49 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Joao Sertoli
  */
-class Jogador {
+
+@Table(name = "tbl_jogador")
+@Entity
+public class Jogador implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "jog_id")
     private int id;
+    @Column(name = "jog_nickname", nullable = false)
     private String nickname;
+    @Column(name = "jog_level")
     private int level;
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "tbl_baralho_jogador",
+        joinColumns = @JoinColumn(name = "jogador"),
+        inverseJoinColumns = @JoinColumn(name = "carta")
+    )
     private List<Carta> baralho;
 
-    // Construtor
-    public Jogador(int id, String nickname, int level) {
-        this.id = id;
-        this.nickname = nickname;
-        this.level = level;
-        this.baralho = new ArrayList<>();
+    public Jogador() {
+        baralho = new ArrayList<>();
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }

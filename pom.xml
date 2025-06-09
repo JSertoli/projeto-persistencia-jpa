@@ -11,33 +11,28 @@
         <exec.mainClass>br.edu.projects.lpoo.cardgame.LPOOCardGame</exec.mainClass>
     </properties>
     <dependencies>
-        <!-- Hibernate 5 como provedor JPA -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>5.6.15.Final</version>
         </dependency>
-        <!-- JUnit para testes -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
             <version>4.13.2</version>
         </dependency>
-        <!-- Driver PostgreSQL -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.24</version>
         </dependency>
         
-        <!-- JPA API (javax.persistence) -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
             <version>2.2</version>
         </dependency>
-        <!-- JAXB (necessário para Java 11+ e compatível com Java 21) -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
